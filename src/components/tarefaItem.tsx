@@ -15,6 +15,9 @@ export const TarefaItem = ({
   goToTarefa,
 }: Props) => {
   const opacity = tarefa.done ? 0.5 : 1;
+  const color = (new Date(tarefa.expiradoEm) < new Date()) ? "orange" : "black";
+  const border = (new Date(tarefa.expiradoEm) < new Date()) ? "1px solid red" : "none";
+  const textDecoration = (new Date(tarefa.expiradoEm) < new Date()) ? "line-through" : "none";
 
   return (
     <Paper
@@ -26,6 +29,9 @@ export const TarefaItem = ({
         justifyContent: "space-between",
         alignItems: "center",
         opacity,
+        color,
+        border,
+        textDecoration,
       }}
       elevation={1}
     >

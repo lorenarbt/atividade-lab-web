@@ -79,12 +79,12 @@ export const TarefaPage = ({ appState }: Props) => {
             </Typography>
             <Typography variant="body1">
               Data de Criação:
-              {format(tarefa.createdAt, " eeee, dd/MM/yyyy HH:mm", {
+              {format(new Date(tarefa.createdAt), " eeee, dd/MM/yyyy HH:mm", {
                 locale: ptBR,
               })}
             </Typography>
             <Typography variant="body1">
-              {formatDistance(tarefa.createdAt, new Date(), {
+              {formatDistance(new Date(tarefa.createdAt), new Date(), {
                 addSuffix: true,
                 locale: ptBR,
               })}
